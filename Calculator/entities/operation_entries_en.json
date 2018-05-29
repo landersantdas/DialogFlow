@@ -1,0 +1,40 @@
+[
+  {
+    "value": "add",
+    "synonyms": [
+      "plus",
+      "+",
+      "add",
+      "addition"
+    ]
+  },
+  {
+    "value": "subtract",
+    "synonyms": [
+      "subtract",
+      "minus",
+      "-",
+      "subtraction",
+      "difference"
+    ]
+  },
+  {
+    "value": "multiply",
+    "synonyms": [
+      "multiply",
+      "times",
+      "x",
+      "X",
+      "multiplication"
+    ]
+  },
+  {
+    "value": "divide",
+    "synonyms": [
+      "divide",
+      "divided by",
+      "/",
+      "division"
+    ]
+  }
+]

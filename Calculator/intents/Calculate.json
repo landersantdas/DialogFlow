@@ -1,0 +1,74 @@
+{
+  "id": "be84d372-5426-4540-b023-d6c31f0585e1",
+  "name": "Calculate",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "calculate.common.operation",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "d7ea777f-4a35-42fc-93b7-c954f9cfa184",
+          "required": true,
+          "dataType": "@operation",
+          "name": "operation",
+          "value": "$operation",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "I didn\u0027t get the operation you want me  to perform. Should I add, subtract, multiply or divide?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "0f487518-9a5e-4995-baee-4f6abbad20ee",
+          "required": true,
+          "dataType": "@sys.number",
+          "name": "number",
+          "value": "$number",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "I need two number to perform that."
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "9d024592-4674-4415-982a-4176a6563d15",
+          "required": true,
+          "dataType": "@sys.number",
+          "name": "number1",
+          "value": "$number1",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "I need one more number."
+            }
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "Webhook failed"
+        }
+      ],
+      "defaultResponsePlatforms": {
+        "google": false
+      },
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1527229970,
+  "fallbackIntent": false,
+  "events": []
+}
