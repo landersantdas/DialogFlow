@@ -1,0 +1,58 @@
+{
+  "id": "22ca400f-023d-43bc-8717-5e5a346dc44e",
+  "name": "Add Numbers",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "addNumber",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "46f673c2-828e-4ad8-8f7a-4792d1459177",
+          "required": true,
+          "dataType": "@sys.number",
+          "name": "number",
+          "value": "$number",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "I need at least two numbers to perform addition."
+            }
+          ],
+          "isList": true
+        },
+        {
+          "id": "053e1627-6ce7-4fc6-ac05-753e507fc098",
+          "required": true,
+          "dataType": "@operation",
+          "name": "operation",
+          "value": "$operation",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Specify operation."
+            }
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "Webhook failed"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1527576634,
+  "fallbackIntent": false,
+  "events": []
+}

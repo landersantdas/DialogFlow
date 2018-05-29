@@ -1,0 +1,57 @@
+{
+  "id": "a3b134d0-cf3a-4d62-baf5-756440bb62ff",
+  "name": "Multiply Numbers",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "67da4f12-e979-4cb8-ba0c-6470c38ac723",
+          "required": true,
+          "dataType": "@sys.number",
+          "name": "number",
+          "value": "$number",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "I need at least two numbers to perform multiplication."
+            }
+          ],
+          "isList": true
+        },
+        {
+          "id": "b9589883-f3bc-4af2-a65e-1601e4100f36",
+          "required": true,
+          "dataType": "@operation",
+          "name": "operation",
+          "value": "$operation",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Please specify operation"
+            }
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1527577670,
+  "fallbackIntent": false,
+  "events": []
+}

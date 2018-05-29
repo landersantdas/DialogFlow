@@ -20,43 +20,51 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   function fallback(agent) {
     agent.add(`I didn't understand`);
     agent.add(`I'm sorry, can you try again?`);
-}
- function performOperation(agent) {
+  }
+  function performOperation(agent) {
     // Get parameters from Dialogflow to convert
     let operation = agent.parameters.operation;
-    const num1 = agent.parameters.number;
-    const num2 = agent.parameters.number1;
+    //agent.add(operation);
     
-    console.log(`User requested to ${operation} ${num1} and ${num2}`);
-
-    let answer;
+    let numList, answer = 0;
+    
     if (operation === `add`) {
-        answer = num1 + num2;
-        operation = "plus"
-    } 
-    else if (operation === `subtract`) {
-        answer = num1 - num2;
-        operation = "subtracted by"
-    } 
-    else if (operation === `multiply`) {
-        answer = num1 * num2;
-        operation = "multiply by"
-    } 
-    else if (operation === `divide`) {
-        answer = num1 / num2;
-        operation = "divided by"
+        numList = agent.parameters.number;
+        let count = 0;
+        while (count < numList.length){
+            answer = answer + numList[count];
+            count = count + 1;
+        }
+    } else if (operation === `multiply`) {
+        numList = agent.parameters.number;
+        let count = 0;
+        answer = 1;
+        while (count < numList.length){
+            answer = answer * numList[count];
+            count = count + 1;
+        }
+    } else if (operation === `divide`) {        
+        let divid = agent.parameters.dividend;
+        let divis = agent.parameters.divisor;
+        answer = divid / divis;
+    } else if (operation === `subtract`) {
+        let min = agent.parameters.minuend;
+        let sub = agent.parameters.subtrahend;
+        answer = min - sub;
     }
-
     
     // Compile and send response
-    agent.add(`${num1} ${operation} ${num2} is equals to ${answer}`);
+    agent.add(`The answer is ${answer}`);
 
   }
   
   let intentMap = new Map();
   intentMap.set('Default Welcome Intent', welcome);
   intentMap.set('Default Fallback Intent', fallback);
-  intentMap.set('Calculate', performOperation);
+  intentMap.set('Add Numbers', performOperation);
+  intentMap.set('Multiply Numbers', performOperation);
+  intentMap.set('Subtract Two Numbers', performOperation);
+  intentMap.set('Divide Two Numbers', performOperation);
   // intentMap.set('your intent name here', googleAssistantHandler);
   agent.handleRequest(intentMap);
 });

@@ -5,7 +5,9 @@
       "plus",
       "+",
       "add",
-      "addition"
+      "addition",
+      "sum",
+      "summation"
     ]
   },
   {
@@ -25,7 +27,8 @@
       "times",
       "x",
       "X",
-      "multiplication"
+      "multiplication",
+      "product"
     ]
   },
   {
@@ -34,7 +37,8 @@
       "divide",
       "divided by",
       "/",
-      "division"
+      "division",
+      "quotient"
     ]
   }
 ]

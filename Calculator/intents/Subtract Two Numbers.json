@@ -1,0 +1,71 @@
+{
+  "id": "55fdcc84-a565-493b-b84b-9b2e92aa79d0",
+  "name": "Subtract Two Numbers",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "02ee59dd-8941-4192-bb70-32d62bbd433b",
+          "required": true,
+          "dataType": "@operation",
+          "name": "operation",
+          "value": "$operation",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Specify operation."
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "9921499e-ac5d-449b-8010-7d4aa0911f7f",
+          "required": true,
+          "dataType": "@sys.number",
+          "name": "minuend",
+          "value": "$minuend",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "I need two numbers to perform that."
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "e679a202-60c7-40ac-8e1b-3646a29d19d4",
+          "required": true,
+          "dataType": "@sys.number",
+          "name": "subtrahend",
+          "value": "$subtrahend",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "I need one more."
+            }
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1527577381,
+  "fallbackIntent": false,
+  "events": []
+}

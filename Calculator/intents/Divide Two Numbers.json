@@ -1,0 +1,71 @@
+{
+  "id": "3db7b6b4-12e9-4eb8-b993-b0beccbc5407",
+  "name": "Divide Two Numbers",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "879b8a89-d06d-4160-9d78-5470c0ab2040",
+          "required": true,
+          "dataType": "@operation",
+          "name": "operation",
+          "value": "$operation",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Please specify operation."
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "3f98bdb3-d580-4dc2-bb31-629364e0e1cc",
+          "required": true,
+          "dataType": "@sys.number",
+          "name": "dividend",
+          "value": "$dividend",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "I need two numbers to perform that."
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "75801557-4e7a-4fec-9610-1f3f63cf8c31",
+          "required": true,
+          "dataType": "@sys.number",
+          "name": "divisor",
+          "value": "$divisor",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Give me one more number"
+            }
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1527579698,
+  "fallbackIntent": false,
+  "events": []
+}
