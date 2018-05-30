@@ -16,10 +16,9 @@ exports.webhook = functions.https.onRequest((request, response) => {
             let params = request.body.queryResult.parameters;
 
             firestrore.collection('bookings').add(params)
-                .then(() =>{       
+                .then(() =>{  
                     response.send({
-                        fulfillmentText: `Hello ${params.name}, your hotel booking request for ${params.RoomType} room
-                        is forwarded for ${params.number} person/s. We will contact you on ${params.email} soon.`
+                        fulfillmentText: `Hello ${params.name}, your hotel booking request for ${params.RoomType} room is forwarded for ${params.number} person/s. We will contact you on ${params.email} soon.`
                     });
                 })
                 .catch((e => {
@@ -38,7 +37,6 @@ exports.webhook = functions.https.onRequest((request, response) => {
                     var bookings = []
                     querySnapshot.forEach((doc) => {bookings.push(doc.data() )});
     
-
                     response.send({
                         fulfillmentText: `You have ${bookings.length} bookings. Would you like to show them? \n`
                     });
@@ -46,7 +44,7 @@ exports.webhook = functions.https.onRequest((request, response) => {
                 .catch((err => {
                     console.log("Error: ", err);
                     response.send({
-                        fulfillmentText: "Something went wrong"
+                        fulfillmentText: "Something went wrong while counting"
                     })
 
                 }))
@@ -75,12 +73,18 @@ exports.webhook = functions.https.onRequest((request, response) => {
                 .catch((err => {
                     console.log("Error: ", err);
                     response.send({
-                        fulfillmentText: "Something went wrong"
+                        fulfillmentText: "Something went wrong on showing"
                     })
 
                 }))
             break;
+
+        case 'input.welcome':
+            break;
             
+        case 'input.unknown':
+            break;
+
         default:
             response.send({
                 fulfillmentText: "No action matched in webhook"
@@ -88,6 +92,8 @@ exports.webhook = functions.https.onRequest((request, response) => {
 
     }
 
+    let messageData = request.body;
+    firestrore.collection('conversation').add(messageData);
 
 
 
