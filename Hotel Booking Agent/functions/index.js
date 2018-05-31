@@ -37,6 +37,7 @@ exports.webhook = functions.https.onRequest((request, response) => {
                     var bookings = []
                     querySnapshot.forEach((doc) => {bookings.push(doc.data() )});
     
+
                     response.send({
                         fulfillmentText: `You have ${bookings.length} bookings. Would you like to show them? \n`
                     });
@@ -62,8 +63,7 @@ exports.webhook = functions.https.onRequest((request, response) => {
                     var fulfillmentText = `You have ${bookings.length} bookings \n`;
 
                     bookings.forEach((eachBooking, index) => {
-                        fulfillmentText += `Number ${index + 1} is ${eachBooking.RoomType} room for ${eachBooking.number} persons,
-                        booked by ${eachBooking.name}, contact email is ${eachBooking.email} \n`
+                        fulfillmentText += `Number ${index + 1} is ${eachBooking.RoomType} room for ${eachBooking.number} persons, booked by ${eachBooking.name}, contact email is ${eachBooking.email} \n`
                     })
 
                     response.send({
@@ -92,8 +92,10 @@ exports.webhook = functions.https.onRequest((request, response) => {
 
     }
 
+
     let messageData = request.body;
     firestrore.collection('conversation').add(messageData);
+    
 
 
 
